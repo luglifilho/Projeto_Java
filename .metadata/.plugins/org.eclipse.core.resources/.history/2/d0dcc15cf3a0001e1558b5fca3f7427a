@@ -1,0 +1,44 @@
+package mercado.model;
+
+public class CafeGourmet extends CafeTradicional{
+	
+	private String fazenda;
+	private int pontuacao;
+	private String sabor;
+	
+	public CafeGourmet(String nome, float peso, int intensidade, float preco, String fazenda, int pontuacao,
+			String sabor) {
+		super(nome, peso, intensidade, preco);
+		this.fazenda = fazenda;
+		this.pontuacao = pontuacao;
+		this.sabor = sabor;
+	}
+
+	public String getFazenda() {
+		return fazenda;
+	}
+
+	public void setFazenda(String fazenda) {
+		this.fazenda = fazenda;
+	}
+
+	public int getPontuacao() {
+		return pontuacao;
+	}
+
+	public void setPontuacao(int pontuacao) {
+		this.pontuacao = pontuacao;
+	}
+
+	public String getSabor() {
+		return sabor;
+	}
+
+	public void setSabor(String sabor) {
+		this.sabor = sabor;
+	}
+	
+	
+	
+	
+}

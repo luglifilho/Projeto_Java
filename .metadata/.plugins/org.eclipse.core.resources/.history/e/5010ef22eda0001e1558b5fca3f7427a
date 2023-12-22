@@ -1,0 +1,12 @@
+package mercado.controller;
+
+import mercado.model.CafeTradicional;
+
+public interface mercadorepos {
+	
+	public void cadastrar(CafeTradicional nome);
+	public void listarTodas();
+	public void deletar(CafeTradicional nome);
+	public void ProcurarPorNome(String nome);
+
+}

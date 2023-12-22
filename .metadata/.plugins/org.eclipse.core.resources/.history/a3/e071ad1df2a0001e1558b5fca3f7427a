@@ -1,0 +1,129 @@
+package mercado;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import mercado.controller.mercadoController;
+import mercado.pedido.ItemPedido;
+import mercado.pedido.ItemPedidoSimples;
+
+public class Menu {
+
+
+
+	public static void main(String[] args) {
+		mercadoController cafes = new mercadoController();
+
+		Scanner scanner = new Scanner(System.in);
+
+		int op;
+
+		do {
+
+			System.out.println("***************************************************");
+			System.out.println("                                                   ");
+			System.out.println("                    Café do seu Zé                 ");
+			System.out.println("                                                   ");
+			System.out.println("***************************************************");
+			System.out.println("                                                   ");
+			System.out.println("             1 - Ver Produtos disponiveis          ");
+			System.out.println("             2 - Buscar um Produto                 ");
+			System.out.println("             3 - Adicionar um Produto ao estoque   ");
+			System.out.println("             4 - Remover um Produto do estoque     ");
+			System.out.println("             0 - Sair                              ");
+			System.out.println("                                                   ");
+			System.out.println("***************************************************");
+			System.out.println("Entre com a opção desejada:");
+			System.out.println("                                                   ");
+
+			op = scanner.nextInt();
+			String produto, buscaCafe, tipo, nome;
+			float peso, preco;
+			int intensidade;
+			
+			switch (op) {
+			case 1:
+				System.out.println("Produtos Disponiveis");
+				cafes.listarTodas();
+				keyPress();
+				break;
+			case 2:
+				
+				System.out.println("Digite o nome de um café: ");
+				buscaCafe = scanner.next();
+				cafes.ProcurarPorNome(buscaCafe);
+				keyPress();
+				break;
+			case 3:
+				
+				
+				do {
+					System.out.println("Digite o Tipo de Café ( café Gourmet ou café Tradicional)");
+					tipo = scanner.next();
+				} while (tipo == "café gourmet" || tipo == "café tradicional");
+
+				System.out.println("Digite o Nome do café");
+				nome = scanner.next();
+				System.out.println("Digite o Peso do café");
+				peso = scanner.nextFloat();
+				System.out.println("Digite a intensidade do café");
+				intensidade = scanner.nextInt();
+				System.out.println("Digite o Preço do café");
+				preco = scanner.nextFloat();
+
+				switch (tipo) {
+				case 1: {
+					System.out.println("Digitge o Limite de Crédito (R$): ");
+					limite = scanner.nextFloat();
+					contas.cadastrar(new ContaCorrente(contas.gerarNumero(), agencia, tipo, titular, saldo, limite));
+					break;
+				}
+				case 2: {
+					System.out.println("Digite o dia do Aniversario da COnta: ");
+					aniversario = scanner.nextInt();
+					contas.cadastrar(new ContaPoupanca(contas.gerarNumero(), agencia, tipo, titular, saldo, aniversario));
+					break;
+				}
+				}
+				
+				keyPress();
+				break;
+			case 4:
+				System.out.println("Digite o número do pedido");
+				keyPress();
+				break;
+			case 0:
+				System.out.println("\nObrigado por utilizar o Mercado da Vila !");
+				System.out.println("\nVOLTE SEMPRE!");
+				keyPress();
+				break;
+			default:
+				System.out.println("\nOpçao Inválida");
+				keyPress();
+				break;
+			}
+
+		} while (op != 0);
+
+		scanner.close();
+	}
+
+	private static void keyPress() {
+		try {
+
+			System.out.println("\n\nPressione Enter para Continuar...");
+			System.in.read();
+
+		} catch (IOException e) {
+
+			System.out.println("Você pressionou uma tecla diferente de enter!");
+
+		}
+		
+	}
+
+
+
+}

@@ -1,0 +1,53 @@
+package mercado.controller;
+
+import java.util.ArrayList;
+
+import mercado.model.CafeTradicional;
+
+public class mercadoController implements mercadorepos {
+	
+	private ArrayList<CafeTradicional> listacafes = new ArrayList<CafeTradicional>();
+	
+
+	@Override
+	public void cadastrar(CafeTradicional nome) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void listarTodas() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deletar(CafeTradicional nome) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ProcurarPorNome(String nome) {
+		var cafe = buscarNaCollection(nome);
+		if(cafe != null) {
+			cafe.visualizar();
+		}else {
+			System.out.println("\nCafé não foi encontrado");
+		}
+		
+		
+	}
+
+	private CafeTradicional buscarNaCollection(String nome) {
+		for( var cafe : listacafes) {
+			if(cafe.getNome() == nome) {
+				return cafe;
+			}
+		}
+		return null;
+	}
+	
+	
+
+}

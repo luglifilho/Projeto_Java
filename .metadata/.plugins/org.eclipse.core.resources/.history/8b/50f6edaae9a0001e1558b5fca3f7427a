@@ -1,0 +1,12 @@
+package mercado.model;
+
+public abstract class CafeTradicional {
+	
+	private String nome;
+	private float peso;
+	private int intensidade;
+	private float preco;
+	
+	
+
+}

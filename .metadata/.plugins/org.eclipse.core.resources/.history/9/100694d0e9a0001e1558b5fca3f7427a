@@ -1,0 +1,9 @@
+package mercado.model;
+
+public class CafeGourmet extends CafeTradicional{
+	
+	private String fazenda;
+	private int pontuacao;
+	private String sabor;
+
+}

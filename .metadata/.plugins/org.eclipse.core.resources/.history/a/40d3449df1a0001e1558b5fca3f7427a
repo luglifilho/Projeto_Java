@@ -1,0 +1,70 @@
+package mercado;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import mercado.pedido.ItemPedido;
+import mercado.pedido.ItemPedidoSimples;
+
+public class Menu {
+
+
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+
+		int op;
+
+		do {
+
+			System.out.println("***************************************************");
+			System.out.println("                                                   ");
+			System.out.println("                    Café do seu Zé                 ");
+			System.out.println("                                                   ");
+			System.out.println("***************************************************");
+			System.out.println("                                                   ");
+			System.out.println("             1 - Ver Produtos disponiveis          ");
+			System.out.println("             2 - Buscar um Produto                 ");
+			System.out.println("             3 - Adicionar um Produto ao estoque   ");
+			System.out.println("             4 - Remover um Produto do estoque     ");
+			System.out.println("             0 - Sair                              ");
+			System.out.println("                                                   ");
+			System.out.println("***************************************************");
+			System.out.println("Entre com a opção desejada:");
+			System.out.println("                                                   ");
+
+			op = scanner.nextInt();
+			String produto;
+			switch (op) {
+			case 1:
+				System.out.println("Produtos Disponiveis");
+				break;
+			case 2:
+				
+				System.out.println("OLA");
+				break;
+			case 3:
+				System.out.println("Digite o nome de um produto");
+				break;
+			case 4:
+				System.out.println("Digite o número do pedido");
+				break;
+			case 0:
+				System.out.println("\nObrigado por utilizar o Mercado da Vila !");
+				System.out.println("\nVOLTE SEMPRE!");
+				break;
+			default:
+				System.out.println("\nOpçao Inválida");
+				break;
+			}
+
+		} while (op != 0);
+
+		scanner.close();
+	}
+
+
+
+}

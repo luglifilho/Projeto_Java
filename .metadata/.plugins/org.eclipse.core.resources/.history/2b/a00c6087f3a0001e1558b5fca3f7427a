@@ -1,0 +1,92 @@
+package mercado.model;
+
+public abstract class CafeTradicional {
+	
+	private String nome;
+	private float peso;
+	private int intensidade;
+	private float preco;
+	private String tipo;
+	
+	
+	public CafeTradicional(String tipo) {
+		super();
+		this.tipo = tipo;
+	}
+
+
+	public String getTipo() {
+		return tipo;
+	}
+
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+
+	public CafeTradicional(String nome, float peso, int intensidade, float preco) {
+		super();
+		this.nome = nome;
+		this.peso = peso;
+		this.intensidade = intensidade;
+		this.preco = preco;
+	}
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public float getPeso() {
+		return peso;
+	}
+
+
+	public void setPeso(float peso) {
+		this.peso = peso;
+	}
+
+
+	public int getIntensidade() {
+		return intensidade;
+	}
+
+
+	public void setIntensidade(int intensidade) {
+		this.intensidade = intensidade;
+	}
+
+
+	public float getPreco() {
+		return preco;
+	}
+
+
+	public void setPreco(float preco) {
+		this.preco = preco;
+	}
+	
+	public void visualizar() {
+		
+		switch(this.tipo) {
+		case "café tradicional" : 
+			tipo = "Café Tradicional";
+			break;
+		case "café gourmet":
+			tipo = "Café Gourmet";
+		break;
+		}
+	}
+	
+	
+	
+	
+
+}
